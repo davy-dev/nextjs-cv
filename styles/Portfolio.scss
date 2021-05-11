@@ -1,0 +1,128 @@
+.Portfolio {
+  background: linear-gradient(45deg, #aee9ff1a, #007298e1, #01273888),
+    url("../styles/img/iStock.jpg");
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+  display: grid;
+  grid-template-rows: 150px 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 55px;
+  margin-left: 15px;
+  padding-bottom: 15px;
+  position: relative;
+  width: 95%;
+  // height: 100%;
+
+  border-radius: 7px;
+
+  h2 {
+    margin: 30px 10px 10px 10px;
+    font-size: 3em;
+    font-family: "Antonio", sans-serif;
+    text-align: center;
+    transform: translateY(30px);
+  }
+  .list-project {
+    grid-area: 2/1/2/4;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    .project {
+      display: grid;
+      grid-template-rows: 320px repeat(4, 1fr);
+      width: 350px;
+      height: 450px;
+      padding: 10px;
+      margin: 10px;
+      background: linear-gradient(#0594d0, #04bbff);
+      border-radius: 15px;
+
+      flex-wrap: wrap;
+
+      img {
+        grid-area: 1/2;
+        border-radius: 10px;
+        width: 330px;
+        height: 320px;
+      }
+
+      a {
+        font-family: "Yanone Kaffeesatz", sans-serif;
+        margin: 7px;
+        padding: 2px;
+        font-size: 1.5em;
+
+        &:visited {
+          color: black;
+        }
+        &:link {
+          text-decoration: black;
+        }
+        &:hover {
+          border-radius: 10px;
+
+          animation: smouth-grow 0.2s ease-in-out forwards;
+        }
+      }
+      .title {
+        font-family: "Yanone Kaffeesatz", sans-serif;
+        margin: 7px;
+        padding: 2px;
+        font-size: 1.5em;
+        color: #7a3b8a;
+
+        grid-area: 2/2;
+      }
+      .site {
+        grid-area: 3/2;
+      }
+      .code-source {
+        grid-area: 4/2;
+      }
+    }
+  }
+}
+@keyframes smouth-grow {
+  from {
+    background: #25a6fca9;
+    width: 100px;
+  }
+  to {
+    background: #155580a9;
+    width: 120px;
+  }
+}
+// MEDIA QUERY MAX-WIDTH 643PX ============================================
+
+@media screen and (max-width: 643px) {
+  .Portfolio {
+    grid-area: 1/1/2/3;
+    grid-template-columns: repeat(2, 1fr);
+    h2 {
+      grid-area: 1/2/2/3;
+    }
+  }
+}
+// MEDIA QUERY MIN-WIDTH 320PX MAX-WIDTH 493PX ============================================
+@media screen and (min-width: 320px) and (max-width: 493px) {
+  .Portfolio {
+    margin: auto;
+    margin-top: 70px;
+    h2 {
+      margin-top: 70px;
+      margin-right: 10px;
+      transform: translateY(10px);
+    }
+    .list-project {
+      .project {
+        img {
+          width: 280px;
+        }
+      }
+    }
+  }
+}
